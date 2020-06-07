@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Truvid Test</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="root">
+        <div class="title">Welcome to Truvid Video Player!</div>
+        <div class="subtitle">(The most awesome video player ever)</div>
+        <div class="video-player-container">
+            <video
+                id="video"
+                class="video-js"
+                controls
+                preload="auto"
+                width="640"
+                height="360"
+                data-setup="{}"
+             >
+            <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank"
+                >supports HTML5 video</a
+                >
+            </p>
+            </video>
+            <div class="playlist" id="playlist">
+                <div class="playlist-header">Playlist</div>
+                <div class="actions-bar">
+                    <div class="button" id="previous-button"> << Previous</div><div class="button" id="next-button">Next >> </div>
+                </div>
+                <div class="modes-bar">
+                    <div id="original-mode"> Original Mode </div><div id="shuffle-mode">Shuffle</div><div id="crazy-mode">Crazy Mode</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="index.js">
+    </script>
+</body>
+</html>

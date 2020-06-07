@@ -1,0 +1,100 @@
+.root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    font-family: Arial;
+}
+
+.title{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.subtitle{
+    margin-bottom: 50px;
+}
+
+.video-player-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.playlist{
+    width: 300px;
+    padding: 10px;
+    height: 350px;
+    flex-wrap: wrap;
+    overflow: scroll;
+    padding-top: 0px;
+    position: relative;
+    /*background: #EEEEEE;*/
+    /*border-radius: 10px;*/
+}
+
+.playlist-header{
+    align-self: center;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.actions-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.button{
+    background: lightcoral;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.modes-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.selected-mode{
+    background: lightcoral;
+    padding:10px;
+    border-radius: 10px;
+}
+
+.selected-video{
+    background: lightgrey;
+    padding: 10px;
+}
+
+.video-thumbnail{
+    width: 50px;
+    height:50px;
+}
+
+.video-title{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.video-description{
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+body{
+    margin: 0;
+    flex: 1;
+    background: lavenderblush;
+}
