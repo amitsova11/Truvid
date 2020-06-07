@@ -2,10 +2,12 @@ Hello and welcome to the Truvid video player!
 
 The source files for the video player are:
 
-* index.html
-* index.js
+* /dist/index.html
+* /src/index.js
 * index.css
-* api.js
+* /src/api.js
+
+In order to run the app, just clone the repo and open index.html in a chrome browser.
 
 I hope you'll enjoy using the video player!
 
