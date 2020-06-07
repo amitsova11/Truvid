@@ -176,6 +176,7 @@ shuffleButton.onclick = ()=>{
     shuffleButton.setAttribute("class","selected-mode");
     videoPlayer.removeEventListener('ended',function(){handleNext();});
     videoPlayer.addEventListener('ended',function(){initShuffleMode();});
+    nextButton.onclick = ()=>handleShuffleNext();
 }
 
 crazyButton.onclick = ()=>{
