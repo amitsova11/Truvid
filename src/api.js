@@ -1,4 +1,5 @@
-import "./index"
+import {subscribeOnMediaChange, subscribeOnTime, handleNext,handlePause,handlePlay,handlePrevious,initShuffleMode} from "./index";
+
 
 function play() {
     handlePlay();
@@ -18,6 +19,14 @@ function playPrevious() {
 
 function shuffle() {
     initShuffleMode();
+}
+
+function subscribeToOnTimeUpdate(func) {
+    subscribeOnTime(func);
+}
+
+function subscribeToMediaChange(func) {
+    subscribeOnMediaChange(func)
 }
 
 

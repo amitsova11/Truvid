@@ -24,13 +24,21 @@
 .playlist{
     width: 300px;
     padding: 10px;
-    height: 350px;
-    flex-wrap: wrap;
-    overflow: scroll;
+    height: 500px;
     padding-top: 0px;
     position: relative;
     /*background: #EEEEEE;*/
     /*border-radius: 10px;*/
+}
+
+
+
+.buttons-container{
+    position: fixed;
+    width: 330px;
+    background-color: lightpink;
+    padding: 12px;
+    border-radius: 4px;
 }
 
 .playlist-header{
@@ -54,7 +62,7 @@
 .button{
     background: lightcoral;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 10px;
 }
 
@@ -67,15 +75,34 @@
     align-items: center;
 }
 
+.mode{
+    cursor: pointer;
+}
+
 .selected-mode{
     background: lightcoral;
     padding:10px;
-    border-radius: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.video-list{
+    flex-wrap: wrap;
+    height: 400px;
+    position: absolute;
+    overflow: scroll;
+    top: 170px;
+}
+
+.video-list::-webkit-scrollbar {
+    display: none;
 }
 
 .selected-video{
     background: lightgrey;
     padding: 10px;
+    margin-bottom: 10px;
+    width: 334px;
 }
 
 .video-thumbnail{

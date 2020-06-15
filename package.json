@@ -1,7 +1,7 @@
 {
   "name": "Test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hello and welcome to the Truvid video player!",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,14 @@
   },
   "dependencies": {
     "lodash": "^4.17.15"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amitsova11/Truvid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amitsova11/Truvid/issues"
+  },
+  "homepage": "https://github.com/amitsova11/Truvid#readme"
 }

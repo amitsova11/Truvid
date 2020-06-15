@@ -1,6 +1,5 @@
 import _ from 'lodash';
 
-
 const videos = [
     {
         "title": "Kristen Wiig, Steve Carell In 'Despicable Me 3' First Trailer",
@@ -51,7 +50,7 @@ const videos = [
         "thumbnail": "https://src.trvdp.com/images/c915b75f0d46cf50fced43e1093a708c9ad55644_1.jpg"
     }
 ]
-const playlist = document.getElementById("playlist");
+const playlist = document.getElementById("video-list");
 const videoPlayer = document.getElementById('video');
 const source = document.createElement("source");
 let currentlyPlaying = 0;
@@ -61,15 +60,16 @@ let crazyModeIntervalID;
 //----------------------
 //Video Player Functions
 //----------------------
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-function handlePlay() {
+export function handlePlay() {
     videoPlayer.play();
 }
 
-function handlePause() {
+export function handlePause() {
     videoPlayer.pause();
 }
 
@@ -83,9 +83,10 @@ function handleVideoClick(filePath, video , currentVideoIndex) {
     currentlyPlaying = currentVideoIndex;
     videoPlayer.load();
     videoPlayer.play();
+    video.scrollIntoView();
 }
 
-function handleNext(){
+export function handleNext(){
     currentlyPlaying = currentlyPlaying + 1;
     if (currentlyPlaying === videos.length)
         currentlyPlaying = 0;
@@ -93,7 +94,7 @@ function handleNext(){
     handleVideoClick(videoToSet.file, videoDivs[currentlyPlaying], currentlyPlaying);
 }
 
-function handleShuffleNext(){
+export function handleShuffleNext(){
     let randomInt = getRandomInt(videos.length);
     while (currentlyPlaying === randomInt){
         randomInt = getRandomInt(videos.length);
@@ -103,7 +104,7 @@ function handleShuffleNext(){
     handleVideoClick(videoToSet.file, videoDivs[currentlyPlaying], currentlyPlaying);
 }
 
-function handlePrevious(){
+export function handlePrevious(){
     currentlyPlaying = currentlyPlaying -1;
     if (currentlyPlaying < 0)
         currentlyPlaying = videos.length-1;
@@ -116,13 +117,22 @@ function initCrazyMode() {
     setTimeout(handleShuffleNext, interval);
 }
 
-function initShuffleMode() {
+export function initShuffleMode() {
     handleShuffleNext();
     nextButton.onclick = ()=>handleShuffleNext();
 }
 
+export function subscribeOnTime(func){
+    videoPlayer.ontimeupdate = func
+}
+
+export function subscribeOnMediaChange(func) {
+    videoPlayer.onload = func;
+}
+
+
 function checkScroll() {
-    let fraction = 0.5; // Play when 80% of the player is visible.
+    let fraction = 0.5; // Play when 50% of the player is visible.
 
         let video = videoPlayer;
 
@@ -134,7 +144,6 @@ function checkScroll() {
         visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
 
         visible = visibleX * visibleY / (w * h);
-
         if (visible > fraction) {
             video.play();
         } else {
